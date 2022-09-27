@@ -10,9 +10,9 @@ function onSubmit(evt) {
   evt.preventDefault();
 
   const formData = new FormData(refs.form);
-  delay = Number(formData.get('delay'));
-  step = Number(formData.get('step'));
-  amount = Number(formData.get('amount'));
+  let delay = Number(formData.get('delay'));
+  let step = Number(formData.get('step'));
+  let amount = Number(formData.get('amount'));
   let deleyStep = delay;
   for (let i = 1; i <= amount; i += 1) {
     createPromise(i, deleyStep).then(onSuccess).catch(onError);
